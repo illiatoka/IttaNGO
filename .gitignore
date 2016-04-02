@@ -1,4 +1,5 @@
-# Created by https://www.gitignore.io/api/bower,jekyll,sass
+### Gulp ###
+node_modules
 
 ### Bower ###
 bower_components
@@ -16,3 +17,6 @@ _site/
 ### Sass ###
 .sass-cache/
 *.css.map
+
+### Assets ###
+assets/css/
