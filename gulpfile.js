@@ -53,6 +53,10 @@ gulp.task('sass', function () {
 // Compile files from _jade into _includes
 gulp.task('jade', function () {
   return gulp.src('_jade/*.jade')
+    .pipe(plumber(function (error) {
+        gutil.log(gutil.colors.red(error.message));
+        this.emit('end');
+    }))
     .pipe(jade())
     .pipe(gulp.dest('_includes'));
 });
