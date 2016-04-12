@@ -1,2 +1,27 @@
-.site-header
-  border-bottom: 2px solid $black
+.header
+  border-bottom: em(2) solid $black
+  padding: em(10) 0
+
+  .container
+    align-items: center
+    display: flex
+    justify-content: space-between
+
+  &-logo
+    font-size: em(16)
+    width: em(60)
+
+  &-nav
+    font-size: em(16)
+    a
+      margin: 0 em(10)
+
+  &-languages
+    list-style: none
+    padding: 0
+    width: em(60)
+    &--separator
+      margin: 0 em(5)
+    li
+      display: inline-block
+      font-size: em(16)

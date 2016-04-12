@@ -1,0 +1,42 @@
+// Media queries
+$phone-width: em(768)
+$desktop-width: em(992)
+$large-width: em(1200)
+$huge-width: em(1440)
+
+// Container padding
+$container-phone-padding: em(10)
+$container-desktop-padding: em(20)
+$container-large-padding: em(40)
+$container-huge-padding: em(60)
+
+// Container width
+$container-phone-width: $phone-width - $container-phone-padding
+$container-desktop-width: $desktop-width - $container-desktop-padding
+$container-large-width: $large-width - $container-large-padding
+$container-huge-width: $huge-width - $container-huge-padding
+
+// Device based max-width mixins
+@mixin mediaQuery($media)
+  @if $media == phone
+    @media (max-width: #{$phone-width})
+      @content
+  @if $media == desktop
+    @media (max-width: #{$desktop-width})
+      @content
+  @if $media == large
+    @media (max-width: #{$large-width})
+      @content
+  @if $media == huge
+    @media (max-width: #{$huge-width})
+      @content
+
+// Value based max-width mixin
+@mixin mediaQueryMax($value)
+  @media (max-width: #{$value})
+    @content
+
+// Value based min-width mixin
+@mixin mediaQueryMin($value)
+  @media (min-width: #{$value})
+    @content
