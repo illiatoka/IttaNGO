@@ -1,3 +1,8 @@
+### Node ###
+logs
+*.log
+npm-debug.log*
+
 ### Gulp ###
 node_modules
 
@@ -10,7 +15,6 @@ bower_components
 ### Jekyll ###
 _site/
 _includes/
-.sass-cache/
 .jekyll-metadata
 
 ### Sass ###

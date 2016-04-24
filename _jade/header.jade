@@ -1,17 +1,20 @@
 header.header
   .container
-    a(href='#').header-logo ITTA
+    a(href='#').header-logo
+      img(src='/assets/svg/logo.svg' alt='ITTA Youth NGO logo')
 
-    nav.header-nav
-      a(href='#') News
-      a(href='#') Projects
-      a(href='#') About Us
-      a(href='#') Our Team
-      a(href='#') Contacts
-
-    ul.header-languages
+    ul.header-nav
+      li
+        a(href='#') News
+      li
+        a(href='#') Projects
+      li
+        a(href='#') About Us
+      li
+        a(href='#') Our Team
+      li
+        a(href='#') Contacts
       li
         a(href='#') UA
-      li.header-languages--separator /
-      li
-        a(href='#') EN
+        br
+        a(href='#' class='active') EN

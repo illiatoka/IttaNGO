@@ -1,6 +1,9 @@
 .header
-  border-bottom: em(2) solid $black
-  padding: em(10) 0
+  background-color: rgba(255, 255, 255, 0.70)
+  padding: em(5) 0
+  position: fixed
+  top: 0
+  width: 100%
 
   .container
     align-items: center
@@ -8,20 +11,21 @@
     justify-content: space-between
 
   &-logo
-    font-size: em(16)
-    width: em(60)
+    width: em(55)
+    height: em(55)
+    display: inline-block
+    img
+      width: em(55)
 
   &-nav
+    align-items: center
+    color: #4f4f4f
+    display: flex
     font-size: em(16)
-    a
-      margin: 0 em(10)
-
-  &-languages
-    list-style: none
-    padding: 0
-    width: em(60)
-    &--separator
-      margin: 0 em(5)
+    margin: 0
     li
       display: inline-block
-      font-size: em(16)
+      &:not(:last-child)
+        margin: 0 em(60) 0 0
+    a.active
+      color: $textRed

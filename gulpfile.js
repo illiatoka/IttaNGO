@@ -61,11 +61,11 @@ gulp.task('jade', function () {
     .pipe(gulp.dest('_includes'));
 });
 
-// Watch scss files for changes & recompile. Watch html/md files, run jekyll & reload BrowserSync
+// Watch scss files for changes & recompile. Watch html/md/js files, run jekyll & reload BrowserSync
 gulp.task('watch', function () {
   gulp.watch('assets/sass/**/*.{scss,sass}', ['sass']);
   gulp.watch('_jade/**/*.jade', ['jade']);
-  gulp.watch(['*.html', '_layouts/*.html', '_includes/*.html', '_posts/*'], ['jekyll-rebuild']);
+  gulp.watch(['assets/js/*.js', '*.html', '_layouts/*.html', '_includes/*.html', '_posts/*'], ['jekyll-rebuild']);
 });
 
 // Default task, running just `gulp` will compile the sass, compile the jekyll site, launch BrowserSync & watch files.
