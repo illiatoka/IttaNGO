@@ -13,11 +13,42 @@ body
 *, *:before, *:after
   box-sizing: inherit
 
+// Resets for default html elements
+ol, ul 
+  list-style: none
+  margin: 0px
+  padding: 0px
+h1, h2, h3, h4, h5, h6, p 
+  margin: 0px
+input[type="text"],
+input[type="password"],
+input[type="submit"],
+input[type="button"],
+input[type="email"],
+textarea
+  box-shadow: none
+  outline: none
+  &:focus
+    box-shadow: none
+    outline: none
+button
+  box-shadow: none
+  outline: none
+  &:hover,
+  &:focus,
+  &:active
+    box-shadow: none
+    outline: none
+
+// Specific color for selected elements
+::selection 
+  background: $gray
+
 // Links
 a
   color: $linkColor
-  text-decoration: none
   outline: 0
+  text-decoration: none
   &:hover
     color: $linkColorHover
     text-decoration: underline

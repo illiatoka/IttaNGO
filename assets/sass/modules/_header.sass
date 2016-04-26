@@ -1,9 +1,28 @@
 .header
-  background-color: rgba(255, 255, 255, 0.70)
+  background-color: transparent
+  height: em(65)
+  overflow: visible
   padding: em(5) 0
   position: fixed
   top: 0
   width: 100%
+  z-index: 200
+  &:before
+    background-color: rgba(255, 255, 255, 0.90)
+    bottom: 0
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0.10)
+    content: ""
+    left: 0
+    position: absolute
+    right: 0
+    top: 0
+    transition: all .25s ease-in-out
+    z-index: -1
+  &:hover:before
+    background-color: rgba(255, 255, 255, 1)
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.20)
+  @include mediaQuery(phone)
+    display: none
 
   .container
     align-items: center
@@ -11,18 +30,17 @@
     justify-content: space-between
 
   &-logo
-    width: em(55)
-    height: em(55)
     display: inline-block
+    height: em(55)
+    width: em(55)
     img
-      width: em(55)
+      height: em(55)
 
   &-nav
     align-items: center
     color: #4f4f4f
     display: flex
     font-size: em(16)
-    margin: 0
     li
       display: inline-block
       &:not(:last-child)

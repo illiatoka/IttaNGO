@@ -19,21 +19,21 @@ $container-huge-width: $huge-width - $container-huge-padding
 // Device based max-width mixins
 @mixin mediaQuery($media)
   @if $media == phone
-    @media (max-width: #{$phone-width})
+    @media (max-width: #{$phone-width - em(1)})
       @content
   @if $media == desktop
-    @media (max-width: #{$desktop-width})
+    @media (max-width: #{$desktop-width - em(1)})
       @content
   @if $media == large
-    @media (max-width: #{$large-width})
+    @media (max-width: #{$large-width - em(1)})
       @content
   @if $media == huge
-    @media (max-width: #{$huge-width})
+    @media (max-width: #{$huge-width - em(1)})
       @content
 
 // Value based max-width mixin
 @mixin mediaQueryMax($value)
-  @media (max-width: #{$value})
+  @media (max-width: #{$value - em(1)})
     @content
 
 // Value based min-width mixin
