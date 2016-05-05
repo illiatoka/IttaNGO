@@ -1,17 +1,28 @@
 jQuery(function($) {
-  var slider = {
-    init: function() {
-      slider.config = {
-        container: "js-slider"
+  var smoothScroll = {
+    init: function(duration) {
+      smoothScroll.config = {
+        element: $('a[href^="#"]'),
+        document: $('html, body'),
+        navigation: $('.header')
       };
 
-      slider.setup();
+      smoothScroll.scroll(duration);
     },
 
-    setup: function() {
-      console.log(slider.config.container);
+    scroll: function(duration) {
+      smoothScroll.config.element.on('click', function(event) {
+        var target = $( $(this).attr('href') );
+
+        if( target.length ) {
+          event.preventDefault();
+          smoothScroll.config.document.animate({
+            scrollTop: target.offset().top - smoothScroll.config.navigation.outerHeight()
+          }, duration);
+        }
+      });
     }
   };
 
-  slider.init();
+  smoothScroll.init(300);
 });
