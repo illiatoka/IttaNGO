@@ -1,6 +1,7 @@
 .news
   background-color: $grayLight
-  padding: em(50) 0
+  padding: em(50) 0 em(120)
+  text-align: center
 
   &-title
     color: $textBlack
@@ -8,15 +9,18 @@
     font-weight: 300
     line-height: 1
     text-transform: uppercase
+    text-align: left
 
   &-items
     display: flex
     justify-content: space-between
-    margin: em(90) 0
+    margin: em(90) 0 em(100)
     padding: 0 em(50)
 
   &-item
     width: em(240)
+    @include mediaQuery(huge)
+      width: em(210)
     &--img
       position: relative
       &:before
@@ -49,10 +53,21 @@
     &--link
       border-bottom: em(2) solid #bebebe
       display: inline-block
-      font-size: em(16)
       line-height: 1
-      margin-top: 7px
+      margin-top: em(7)
       padding: em(5) 0 em(1)
       &:hover
         text-decoration: none
         border-bottom-color: $textBlack
+  
+  &-link
+    border: rem(2) solid $gray
+    color: $textGray
+    display: inline-block
+    font-size: em(24)
+    font-weight: 300
+    padding: rem(2) rem(60)
+    &:hover
+      background-color: $gray
+      text-decoration: none
+      color: $textBlack
