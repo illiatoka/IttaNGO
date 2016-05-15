@@ -16,9 +16,13 @@
   &-list
     flex: 1
     padding-right: em(40)
+    @include mediaQuery(large)
+      padding-right: em(20)
 
   &-item
     height: em(140)
+    @include mediaQuery(desktop)
+      height: auto
     &:not(:last-child)
       margin-bottom: em(15)
     &.active
@@ -35,10 +39,14 @@
           border-top-color: $grayLight
           border-right-color: $grayLight
           border-bottom-color: $grayLight
+          @include mediaQuery(desktop)
+            border-left-color: $grayLight
     &--img
       position: relative
       width: em(140)
       opacity: 0.57
+      @include mediaQuery(desktop)
+        display: none
       &:before
         content: ""
         display: block
@@ -57,17 +65,35 @@
       border-right: 1px solid transparent
       border-bottom: 1px solid transparent
       padding-left: em(10)
+      @include mediaQuery(desktop)
+        border-left: 1px solid transparent
+        height: em(90)
     &--title
-      font-size: em(24)
+      font-size: em(28)
       line-height: 1.8
+      @include mediaQuery(huge)
+        font-size: em(24)
+      @include mediaQuery(desktop)
+        font-size: em(18)
     &--text
-      line-height: 1.1
+      line-height: 1.4
       margin-top: em(1)
+      font-size: em(18)
+      @include mediaQuery(huge)
+        font-size: em(16)
+        line-height: 1.1
+      @include mediaQuery(desktop)
+        font-size: em(14)
+        line-height: 1
 
   &-content
     background-color: $grayLight
     height: em(760)
     width: em(640)
+    @include mediaQuery(large)
+      width: em(520)
+    @include mediaQuery(desktop)
+      width: em(380)
     &--img
       position: relative
       &:before
