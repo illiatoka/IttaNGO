@@ -24,5 +24,27 @@ jQuery(function($) {
     }
   };
 
+  var switchProjects = {
+    init: function() {
+      switchProjects.config = {
+        list: $('.projects-list'),
+        content: $('.projects-content'),
+        cssClass: 'active'
+      };
+
+      switchProjects.switchOnClick();
+    },
+
+    switchOnClick: function() {
+      var config = switchProjects.config;
+      switchProjects.config.list.on('click', 'a', function(event) {
+        event.preventDefault();
+        switchProjects.config.list.find('li').removeClass(config.cssClass);
+        $(this).parent().addClass(config.cssClass);
+      });
+    }
+  };
+
   smoothScroll.init(300);
+  switchProjects.init();
 });
