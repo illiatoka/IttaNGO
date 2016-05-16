@@ -1,0 +1,49 @@
+.about
+  background-color: $grayLight
+  padding: em(50) 0 em(100)
+
+  &-title
+    color: $textBlack
+    font-size: em(40)
+    font-weight: 400
+    line-height: 1
+    text-transform: uppercase
+
+  &-image
+    position: relative
+    margin-top: em(95)
+    @include mediaQuery(desktop)
+      display: none
+    &:before
+      content: ""
+      display: block
+      padding-top: 45.454545%
+      width: 100%
+    span
+      bottom: 0
+      background-color: $gray
+      left: 0
+      position: absolute
+      right: 0
+      top: 0
+
+  &-items
+    display: flex
+    &--left,
+    &--right
+      width: 50%
+    &--left
+      padding-right: em(25)
+    &--right
+      padding-left: em(25)
+
+  &-item
+    &--title
+      font-size: em(25)
+      margin: rem(50) 0 rem(40)
+      line-height: 1
+    &--text.big
+      font-size: em(20)
+      line-height: 1.3
+    &--text.small
+      font-size: em(15)
