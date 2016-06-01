@@ -8,9 +8,9 @@
   width: 100%
   z-index: 200
   &:before
-    background-color: rgba(255, 255, 255, 0.90)
+    background-color: rgba(255, 255, 255, 1)
     bottom: 0
-    box-shadow: 0 0 0px rgba(0, 0, 0, 0.10)
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.21)
     content: ""
     left: 0
     position: absolute
@@ -47,5 +47,7 @@
       display: inline-block
       &:not(:last-child)
         margin: 0 em(60) 0 0
+
+  &-lang
     a.active
       color: $textRed
