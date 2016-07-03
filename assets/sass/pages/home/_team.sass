@@ -1,0 +1,67 @@
+.team
+  padding: em(50) 0 em(100)
+
+  &-title
+    color: $textBlack
+    font-size: em(40)
+    font-weight: 400
+    line-height: 1
+    text-transform: uppercase
+
+  &-items
+    display: flex
+    justify-content: space-around
+    align-items: center
+  &-item
+    text-align: center
+    color: $textBlack
+    &--img
+      position: relative
+      margin: em(95) auto em(30)
+      width: em(150)
+      @include mediaQuery(desktop)
+        display: none
+      &:before
+        content: ""
+        display: block
+        padding-top: 100%
+        width: 100%
+      span
+        bottom: 0
+        background-color: $gray
+        border-radius: 50%
+        left: 0
+        position: absolute
+        right: 0
+        top: 0
+    &--name
+      font-size: em(20)
+      font-weight: 600
+      margin-bottom: rem(5)
+    &--position
+      font-size: em(20)
+      margin-bottom: rem(10)
+    &--social
+      display: flex
+      justify-content: center
+      align-items: center
+      .devider
+        font-size: em(34)
+        color: $textBlack
+        margin: 0 5px
+        font-weight: 300
+        line-height: 1
+      a
+        display: inline-block
+        filter: grayscale(100%)
+        height: em(36)
+        width: em(36)
+        margin: 0 5px
+        &:hover
+          filter: grayscale(0)
+      .facebook
+        background-image: url(../svg/facebook.svg)
+      .email
+        background-image: url(../svg/envelope.svg)
+      .linkedin
+        background-image: url(../svg/linkedin.svg)
