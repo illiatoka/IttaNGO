@@ -1,0 +1,141 @@
+.contacts
+  background-color: $grayLight
+  padding: em(50) 0 em(90)
+  @include mediaQuery(large)
+    padding-bottom: em(80)
+
+  &-title
+    color: $textBlack
+    font-size: em(40)
+    font-weight: 400
+    line-height: 1
+    margin-left: rem(-3)
+    text-transform: uppercase
+    text-align: left
+
+  &-desc
+    font-size: em(18)
+    color: $textBlack
+    margin-top: rem(10)
+
+  &-items
+    display: flex
+    justify-content: space-between
+    margin-top: em(90)
+    @include mediaQuery(large)
+      margin: em(55) 0 em(60)
+    @include mediaQuery(desktop)
+      flex-wrap: wrap
+      justify-content: space-around
+
+  &-item
+    width: 50%
+    &--title
+      font-size: em(20)
+      color: $textBlack
+      margin-bottom: rem(6)
+    &--text
+      font-size: em(20)
+      color: $textBlack
+      font-weight: 300
+    &--title + &--text
+      margin-bottom: rem(20)
+    &--form
+      margin-top: em(22)
+      max-width: 250px
+      input
+        background-color: transparent
+        border: none
+        border-bottom: 2px solid $gray
+        display: block
+        color: $textBlack
+        width: 100%
+        font-size: em(20)
+        padding: 0
+        & + input
+          margin-top: rem(25)
+        &:focus
+          outline: none
+        &::-webkit-input-placeholder
+          color: $textBlack
+          font-style: italic
+          font-size: rem(20)
+          font-weight: 300
+        &:-moz-placeholder
+          color: $textBlack
+          font-style: italic
+          font-size: rem(20)
+          font-weight: 300
+        &::-moz-placeholder
+          color: $textBlack
+          font-style: italic
+          font-size: rem(20)
+          font-weight: 300
+        &:-ms-input-placeholder  
+          color: $textBlack
+          font-style: italic
+          font-size: rem(20)
+          font-weight: 300
+      textarea
+        width: 100%
+        max-width: 100%
+        display: block
+        color: $textBlack
+        background-color: transparent
+        font-size: em(20)
+        border: 2px solid $gray
+        margin-top: rem(25)
+        min-height: rem(250)
+        padding: rem(10) rem(10)
+        &:focus
+          outline: none
+        &::-webkit-input-placeholder
+          color: $textBlack
+          font-style: italic
+          font-size: rem(20)
+          font-weight: 300
+        &:-moz-placeholder
+          color: $textBlack
+          font-style: italic
+          font-size: rem(20)
+          font-weight: 300
+        &::-moz-placeholder
+          color: $textBlack
+          font-style: italic
+          font-size: rem(20)
+          font-weight: 300
+        &:-ms-input-placeholder  
+          color: $textBlack
+          font-style: italic
+          font-size: rem(20)
+          font-weight: 300
+      button
+        background-color: transparent
+        border: 2px solid $gray
+        border-top: none
+        float: right
+        color: $textBlack
+        display: inline-block
+        font-size: em(20)
+        padding: rem(2) rem(8)
+        min-width: rem(130)
+        text-align: center
+        &:hover
+          background-color: $gray
+          text-decoration: none
+          color: #f1f1f1
+    &--social
+      display: flex
+      align-items: center
+      margin-top: em(22)
+      a
+        display: inline-block
+        filter: grayscale(100%)
+        height: em(36)
+        width: em(36)
+        &:hover
+          filter: grayscale(0)
+        & + a
+          margin-left: em(10)
+      .facebook
+        background-image: url(../svg/facebook.svg)
