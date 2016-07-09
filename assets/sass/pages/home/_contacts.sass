@@ -43,6 +43,21 @@
     &--form
       margin-top: em(22)
       max-width: 250px
+      .field
+        label.error
+          color: $textRed
+        label.success
+          color: $textGreen
+        position: relative
+        div
+          position: absolute
+          top: -20px
+          left: 0
+          display: none
+        & + .field
+          margin-top: em(25)
+          & + .field
+            padding-top: em(5)
       input
         background-color: transparent
         border: none
@@ -52,8 +67,8 @@
         width: 100%
         font-size: em(20)
         padding: 0
-        & + input
-          margin-top: rem(25)
+        &.error
+          border-bottom: 2px solid $textRed
         &:focus
           outline: none
         &::-webkit-input-placeholder
@@ -84,9 +99,10 @@
         background-color: transparent
         font-size: em(20)
         border: 2px solid $gray
-        margin-top: rem(25)
         min-height: rem(250)
         padding: rem(10) rem(10)
+        &.error
+          border: 2px solid $textRed
         &:focus
           outline: none
         &::-webkit-input-placeholder

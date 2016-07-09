@@ -6,9 +6,10 @@ section#smooth_contacts.contacts
     .contacts-items
       .contacts-item
         .contacts-item--title Subscribe to our news
-        form#form_news.contacts-item--form
-          input(type="email" placeholder="Email")
-          button(type="submit") subscribe
+        form.contacts-item--form.js-form-submit(action="https://script.google.com/macros/s/AKfycbz4bTsnmIPBOIawGxEC6Cb6jTUL2nZvVwk1q0lW3sSr6Oh1uasL/exec")
+          .field
+            input(type="email" name="Email" placeholder="Email" class="required")
+          button(type="submit" disabled="disabled") subscribe
       .contacts-item
         .contacts-item--title Follow us on social media
         .contacts-item--social
@@ -17,10 +18,13 @@ section#smooth_contacts.contacts
     .contacts-items
       .contacts-item
         .contacts-item--title Quick Inquiry
-        form#form_message.contacts-item--form
-          input(type="text" placeholder="Name")
-          input(type="email" placeholder="Email")
-          textarea(placeholder="Your message")
+        form#form_message.contacts-item--form.js-form-submit(action="https://script.google.com/macros/s/AKfycbz4bTsnmIPBOIawGxEC6Cb6jTUL2nZvVwk1q0lW3sSr6Oh1uasL/exec")
+          .field
+            input(type="text" name="Name" placeholder="Name" class="required")
+          .field
+            input(type="email" name="Email" placeholder="Email" class="required")
+          .field
+            textarea(name="Message" placeholder="Your message" class="required")
           button(type="submit") submit
       .contacts-item
         .contacts-item--title Our address
