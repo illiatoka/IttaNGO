@@ -42,7 +42,9 @@
       margin-bottom: rem(20)
     &--form
       margin-top: em(22)
-      max-width: 250px
+      max-width: 320px
+      @include mediaQuery(desktop)
+        max-width: 250px
       .field
         label.error
           color: $textRed

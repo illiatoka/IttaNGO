@@ -7,6 +7,10 @@
     max-width: $container-phone-width
     padding: 0 $container-phone-padding
 
+  @include mediaQueryMin($tablet-width)
+    max-width: $container-tablet-width
+    padding: 0 $container-tablet-padding
+
   @include mediaQueryMin($desktop-width)
     max-width: $container-desktop-width
     padding: 0 $container-desktop-padding

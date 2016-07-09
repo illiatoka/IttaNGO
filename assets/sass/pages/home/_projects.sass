@@ -23,6 +23,8 @@
     @include mediaQuery(desktop)
       flex-wrap: wrap
       justify-content: space-around
+    @include mediaQuery(tablet)
+      justify-content: space-between
 
   &-item
     width: em(260)
@@ -31,7 +33,7 @@
     @include mediaQuery(large)
       width: em(210)
     @include mediaQuery(desktop)
-      width: em(280)
+      width: em(290)
       margin-bottom: em(40)
     &--img
       position: relative

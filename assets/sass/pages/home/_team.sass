@@ -12,15 +12,24 @@
     display: flex
     justify-content: space-around
     align-items: center
+    @include mediaQuery(desktop)
+      flex-wrap: wrap
+      margin-top: em(15)
+    @include mediaQuery(tablet)
+      justify-content: space-between
   &-item
     text-align: center
     color: $textBlack
+    margin-top: em(95)
+    @include mediaQuery(desktop)
+      width: em(290)
+      background-color: $grayLight
+      padding: em(60) 0
+      margin-top: em(40)
     &--img
       position: relative
-      margin: em(95) auto em(30)
+      margin: 0 auto em(30)
       width: em(150)
-      @include mediaQuery(desktop)
-        display: none
       &:before
         content: ""
         display: block
