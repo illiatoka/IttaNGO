@@ -28,6 +28,13 @@
 
   &-item
     width: em(260)
+    background-color: $white
+    display: flex
+    flex-flow: column
+    justify-content: space-between
+    transition: box-shadow ease-in-out .15s
+    &:hover
+      box-shadow: 0 0 15px rgba(0,0,0,.15)
     @include mediaQuery(huge)
       width: em(235)
     @include mediaQuery(large)
@@ -37,42 +44,53 @@
       margin-bottom: em(40)
     &--img
       position: relative
+      display: block
       &:before
+        background-color: $gray
         content: ""
         display: block
         padding-top: 66.66667%
         width: 100%
-      span
+      img
         bottom: 0
-        background-color: $gray
         left: 0
         position: absolute
+        display: block
         right: 0
         top: 0
+        width: 100%
+        height: 100%
     &--desc
       background-color: $white
-      padding: em(13) em(15)
+      padding: em(13) em(15) 0
       text-align: center
     &--title
       font-size: em(20)
       line-height: 1
       text-align: left
+      a
+        padding-bottom: rem(1)
+        border-bottom: em(2) solid transparent
+        &:hover
+          text-decoration: none
+          border-bottom-color: $textBlack
     &--date
       font-size: em(14)
-      padding: em(10) 0 em(5) em(10)
+      padding: em(7) 0 em(5) em(10)
       text-align: left
     &--text
       font-size: em(14)
       text-align: left
     &--link
-      border-bottom: em(2) solid #bebebe
-      display: inline-block
-      line-height: 1
-      margin-top: em(7)
-      padding: em(5) 0 em(1)
-      &:hover
-        text-decoration: none
-        border-bottom-color: $textBlack
+      padding: em(7) 0 em(13)
+      a
+        border-bottom: em(2) solid #bebebe
+        display: inline-block
+        line-height: 1
+        padding: em(5) 0 em(1)
+        &:hover
+          text-decoration: none
+          border-bottom-color: $textBlack
   
   &-link
     border: rem(2) solid $gray

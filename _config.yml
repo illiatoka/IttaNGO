@@ -1,16 +1,14 @@
 # Site settings
-title: Your awesome title
-email: your-email@domain.com
-description: >
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+title: ITTA | Youth NGO
+email: youthngoitta@gmail.com
+description: We are non-governmental non-profit organization based in Ukraine established by and for young people.
 baseurl: ""
-url: "http://yourdomain.com"
-twitter_username: jekyllrb
-github_username:  jekyll
+url: http://ittayouth.com
+facebook_url: https://www.facebook.com/NGO.ITTA
+vk_url: https://vk.com/ngoitta
+google_form_url: https://script.google.com/macros/s/AKfycbz4bTsnmIPBOIawGxEC6Cb6jTUL2nZvVwk1q0lW3sSr6Oh1uasL/exec
 
 # Build settings
 markdown: kramdown
-
-exclude: ["node_modules", "gulpfile.js", "package.json", "assets/sass"]
+permalink: pretty
+exclude: ["node_modules", "gulpfile.js", "package.json", readme.md, npm-debug.log]

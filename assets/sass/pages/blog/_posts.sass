@@ -1,0 +1,89 @@
+.blog
+  padding-top: 50px
+  padding-bottom: 90px
+
+  .container
+    display: flex
+
+  .blog-posts
+    width: calc(100% - 338px)
+    padding-right: 40px
+    border-right: 1px solid $grayLight
+  .blog-sidebar
+    width: 338px
+    padding-left: 40px
+
+  .post
+    color: #3a3a3a
+    &:not(:last-child)
+      margin-bottom: 40px
+      border-bottom: 1px solid $grayLight
+      padding-bottom: 50px
+    img
+      max-width: 100%
+    .title
+      font-size: 25px
+      color: #111
+      font-weight: 600
+      line-height: 1.6
+      margin-bottom: 9px
+    .caption
+      margin-top: 0
+      font-size: 15px
+    .category
+      color: #0096eb
+      margin-left: 2px
+    .devider
+      color: #b7b7b7
+      margin: 0 28px
+  .post-header
+    margin-bottom: 27px
+  .post-desc
+    font-size: 15px
+    p
+      margin-bottom: 25px
+      line-height: 1.7
+      text-align: justify
+    ol
+      padding-left: 0
+      margin-top: -10px
+      margin-bottom: 25px
+      list-style-position: inside
+      li
+        margin-bottom: 8px
+  .post-button
+    display: inline-block
+    background-color: #0096eb
+    font-size: 14px
+    padding: 6px 10px
+    color: #fff
+    border-radius: 2px
+
+  .blog-sidebar
+    .sidebar-item
+      color: #3a3a3a
+      box-shadow: 0 0 7px rgba(0,0,0,.07)
+      padding: 19px 34px
+      border: 1px solid #eaeaea
+      &:not(:last-child)
+        margin-bottom: 30px
+    .title
+      font-size: 16px
+      font-weight: 600
+      line-height: 1
+      margin: 0
+    .list
+      list-style: none
+      padding-left: 0
+      li:not(:last-child)
+        margin-bottom: 8px
+      a
+        display: inline-block
+        line-height: 1
+        margin-top: em(7)
+        padding: em(5) 0 em(1)
+        &.active
+          border-bottom: em(2) solid #bebebe
+        &:hover
+          text-decoration: none
+          border-bottom-color: $textBlack

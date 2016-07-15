@@ -27,7 +27,7 @@ gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
 });
 
 // Wait for jekyll-build, then launch the Server
-gulp.task('browser-sync', ['sass', 'jade', 'jekyll-build'], function() {
+gulp.task('browser-sync', ['sass', 'jekyll-build'], function() {
   browserSync({
     server: {
       baseDir: '_site'
@@ -57,19 +57,18 @@ gulp.task('jade', function () {
         gutil.log(gutil.colors.red(error.message));
         this.emit('end');
     }))
-    .pipe(jade())
+    .pipe(jade({pretty: true}))
     .pipe(gulp.dest('_includes'));
 });
 
 // Watch scss files for changes & recompile. Watch html/md/js files, run jekyll & reload BrowserSync
 gulp.task('watch', function () {
   gulp.watch('assets/sass/**/*.{scss,sass}', ['sass']);
-  gulp.watch('_jade/**/*.jade', ['jade']);
-  gulp.watch(['assets/js/*.js', '*.html', '_layouts/*.html', '_includes/**/*.html', '_posts/*'], ['jekyll-rebuild']);
+  gulp.watch(['assets/js/*.js', '*.html', 'news/**/*.html', 'projects/**/*.html', '_layouts/*.html', '_includes/**/*.html'], ['jekyll-rebuild']);
 });
 
 // Default task, running just `gulp` will compile the sass, compile the jekyll site, launch BrowserSync & watch files.
 gulp.task('default', ['browser-sync', 'watch']);
 
 // Compile all assets and run jekyll build
-gulp.task('build', ['sass', 'jade', 'jekyll-build']);
+gulp.task('build', ['sass', 'jekyll-build']);
