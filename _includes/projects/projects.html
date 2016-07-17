@@ -1,0 +1,16 @@
+{% for post in site.categories.projects %}
+  <div class="post">
+    <img src="{{ site.baseurl }}/assets/img/projects/{{ post.item-image }}" alt="{{ post.item-image-alt }}"/>
+
+    <div class="post-header">
+      <p class="title">{{ post.title }}</p>
+      <p class="caption">Project dates<span class="devider">|</span><span class="date">{{ post.item-date }}</span></p>
+    </div>
+
+    <div class="post-desc">
+      <p>{{ post.item-desc-full }}</p>
+    </div>
+
+    <a href="{{ site.baseurl }}{{ post.url }}" class="post-button">Read More</a>
+  </div>
+{% endfor %}

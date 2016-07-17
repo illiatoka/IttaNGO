@@ -1,0 +1,25 @@
+<div class="blog-sidebar">
+  <div class="sidebar-item">
+    <p class="title">Categories</p>
+    <ul class="list">
+      {% assign pages_list = site.pages %}
+      {% assign group = 'blog' %}
+      {% for node in pages_list %}
+        {% if group == null or group == node.group %}
+          <li><a href="{{ node.url }}" {% if page.url == node.url %}class="active"{% endif %}>{{ node.sub-group | capitalize }}</a></li>
+        {% endif %}
+      {% endfor %}
+      {% assign pages_list = nil %}
+      {% assign group = nil %}
+    </ul>
+  </div>
+
+  <div class="sidebar-item subscribe">  
+    <form action="{{ site.google_form_url }}" class="js-form-submit">
+      <div class="field">
+        <input type="email" name="Email" placeholder="Email" class="required"/>
+      </div>
+      <button type="submit" disabled="disabled">subscribe</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+<section id="smooth_contacts" class="contacts">
+  <div class="container">
+
+    <h2 class="contacts-title">Contact Us</h2>
+    <p class="contacts-desc">We respect the privacy and confidentiality of the visitors and partners of our website. It is our reassurance, that your personal information will not be misused.</p>
+
+    <div class="contacts-items">
+      <div class="contacts-item">
+        <div class="contacts-item--title">Subscribe to our news</div>
+        <form action="{{ site.google_form_url }}" class="contacts-item--form js-form-submit">
+          <div class="field">
+            <input type="email" name="Email" placeholder="Email" class="required"/>
+          </div>
+          <button type="submit" disabled="disabled">subscribe</button>
+        </form>
+      </div>
+
+      <div class="contacts-item">
+        <div class="contacts-item--title">Follow us on social media</div>
+        <div class="contacts-item--social"><a href="{{ site.facebook_url }}" target="_blank" rel="me" class="facebook"></a><a href="{{ site.vk_url }}" target="_blank" rel="me" class="vk"></a></div>
+      </div>
+    </div>
+
+    <div class="contacts-items">
+      <div class="contacts-item">
+        <div class="contacts-item--title">Quick Inquiry</div>
+        <form action="{{ site.google_form_url }}" class="contacts-item--form js-form-submit">
+          <div class="field">
+            <input type="text" name="Name" placeholder="Name" class="required"/>
+          </div>
+          <div class="field">
+            <input type="email" name="Email" placeholder="Email" class="required"/>
+          </div>
+          <div class="field">
+            <textarea name="Message" placeholder="Your message" class="required"></textarea>
+          </div>
+          <button type="submit">submit</button>
+        </form>
+      </div>
+
+      <div class="contacts-item">
+        <div class="contacts-item--title">Our address</div>
+        <div class="contacts-item--text">1 Kotsiubynskogo St., Chernivtsi, Ukraine, 58000</div>
+        <div class="contacts-item--title">Call us</div>
+        <div class="contacts-item--text">+380509347961</div>
+        <div class="contacts-item--title">Email</div>
+        <div class="contacts-item--text">{{ site.email }}</div>
+      </div>
+    </div>
+
+  </div>
+</section>

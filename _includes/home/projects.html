@@ -1,0 +1,31 @@
+<section id="smooth_projects" class="projects">
+  <div class="container">
+
+    <h2 class="projects-title">Projects</h2>
+
+    <div class="projects-items">
+      {% for post in site.categories.projects limit: 4 %}
+        <div class="projects-item">
+          <div class="projects-item--content">
+            <a href="{{ site.baseurl }}{{ post.url }}" class="projects-item--img">
+              <img src="{{ site.baseurl }}/assets/img/projects/thumbnails/{{ post.item-image }}" alt="{{ post.item-image-alt }}"/>
+            </a>
+            <div class="projects-item--desc">
+              <h3 class="projects-item--title">
+                <a href="{{ site.baseurl }}{{ post.url }}">{{ post.item-title-short }}</a>
+              </h3>
+              <p class="projects-item--date">{{ post.item-date }}</p>
+              <p class="projects-item--text">{{ post.item-desc-short }}</p>
+            </div>
+          </div>
+          <div class="projects-item--link">
+            <a href="{{ site.baseurl }}{{ post.url }}">read more</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <a href="{{ site.baseurl }}/projects/" class="projects-link">View All Projects</a>
+
+  </div>
+</section>

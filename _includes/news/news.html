@@ -1,0 +1,24 @@
+{% for post in site.categories.news %}
+  <div class="post">
+    <img src="{{ site.baseurl }}/assets/img/news/{{ post.item-image }}" alt="{{ post.item-image-alt }}"/>
+
+    <div class="post-header">
+      <p class="title">{{ post.title }}</p>
+      <p class="caption">Categories <span class="category">{% if post.category.size > 2 %}{{ post.category | capitalize }}{% else %}{{ post.category | upcase }}{% endif %}</span><span class="devider">|</span><span class="date">{{ post.item-date }}</span></p>
+    </div>
+
+    <div class="post-desc">
+      <p>{{ post.item-desc-1 }}</p>
+
+      {% if post.item-list-1 %}
+        <ol class="list">
+          <li>{{ post.item-list-1 }}</li>
+          <li>{{ post.item-list-2 }}</li>
+          <li>{{ post.item-list-3 }}</li>
+        </ol>
+      {% endif %}
+    </div>
+
+    <a href="{{ site.baseurl }}{{ post.url }}" class="post-button">Read More</a>
+  </div>
+{% endfor %}
