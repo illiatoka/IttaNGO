@@ -3,6 +3,8 @@
   padding: em(50) 0 em(90)
   @include mediaQuery(large)
     padding-bottom: em(80)
+  @include mediaQueryMax(em(640))
+    padding-bottom: em(30)
 
   &-title
     color: $textBlack
@@ -12,11 +14,16 @@
     margin-left: rem(-3)
     text-transform: uppercase
     text-align: left
+    @include mediaQueryMax(em(640))
+      text-align: center
 
   &-desc
     font-size: em(18)
     color: $textBlack
     margin-top: rem(10)
+    @include mediaQueryMax(em(640))
+      text-align: center
+      margin-top: rem(15)
 
   &-items
     display: flex
@@ -27,24 +34,61 @@
     @include mediaQuery(desktop)
       flex-wrap: wrap
       justify-content: space-around
+    @include mediaQueryMax(em(640))
+      flex-flow: column
+      align-items: center
+      margin: em(30) 0 em(25)
 
   &-item
     width: 50%
+    @include mediaQueryMax(em(640))
+      width: 100%
+    &.social
+      @include mediaQueryMax(em(640))
+        display: none
+    &.inquiry
+      @include mediaQueryMax(em(640))
+        order: 0
+        margin-top: em(10)
+    &.social-dublicate
+      display: none
+      @include mediaQueryMax(em(640))
+        display: block
+        order: 1
+        text-align: center
+        margin-bottom: em(20)
+        margin-top: em(55)
+    &.info
+      @include mediaQueryMax(em(640))
+        order: 2
+        text-align: center
     &--title
       font-size: em(20)
       color: $textBlack
       margin-bottom: rem(6)
+      @include mediaQueryMax(em(640))
+        text-align: center
     &--text
       font-size: em(20)
       color: $textBlack
       font-weight: 300
     &--title + &--text
       margin-bottom: rem(20)
+      @include mediaQueryMax(em(640))
+        margin-bottom: rem(5)
     &--form
       margin-top: em(22)
       max-width: 320px
       @include mediaQuery(desktop)
         max-width: 250px
+      @include mediaQueryMax(em(640))
+        max-width: 380px
+        margin: em(22) auto 0
+        background-color: $white
+        box-shadow: 0 0 15px rgba(0,0,0,.15)
+        padding: 30px 5% 70px
+      @include mediaQueryMax(em(380))
+        padding: 20px 5% 60px
       .field
         label.error
           color: $textRed
@@ -146,6 +190,9 @@
       display: flex
       align-items: center
       margin-top: em(22)
+      @include mediaQueryMax(em(640))
+        justify-content: center
+        margin-top: em(15)
       a
         display: inline-block
         filter: grayscale(100%)

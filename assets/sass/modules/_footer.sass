@@ -7,8 +7,16 @@
   position: absolute
   bottom: 0
   z-index: 400
+  @include mediaQueryMax(em(380))
+    padding: em(26) em(15)
 
   .title
     font-size: em(20)
     color: $white
     font-weight: 300
+    @include mediaQueryMax(em(380))
+      display: flex
+      flex-flow: column
+    .devider
+      @include mediaQueryMax(em(380))
+        display: none
