@@ -1,4 +1,35 @@
 jQuery(function($) {
+  var adjustSlider = {
+    init: function(slider, logo, desc) {
+      adjustSlider.config = {
+        minViewportWidth: 690,
+        viewportWidth: window.innerWidth,
+        sliderHeight: slider.outerHeight(),
+        logoWidth: logo.outerWidth(),
+        logoMarginTop: logo.outerHeight(true) - logo.innerHeight(),
+        descMarginBottom: desc.outerHeight(true) - desc.innerHeight()
+      };
+
+      if (adjustSlider.config.viewportWidth < adjustSlider.config.minViewportWidth) {
+        adjustSlider.setSliderHeight(slider, adjustSlider.config.sliderHeight);
+        adjustSlider.setLogoWidth(logo, adjustSlider.config.logoWidth, adjustSlider.config.logoMarginTop);
+        adjustSlider.setDescMargin(desc, adjustSlider.config.descMarginBottom);
+      }
+    },
+
+    setSliderHeight: function(slider, height) {
+      slider.css('min-height', height);
+    },
+
+    setLogoWidth: function(logo, width, margin) {
+      logo.css({'width': width, 'margin-top': margin});
+    },
+
+    setDescMargin: function(desc, margin) {
+      desc.css('margin-bottom', margin);
+    }
+  };
+
   var smoothScroll = {
     init: function(duration) {
       smoothScroll.config = {
@@ -165,6 +196,7 @@ jQuery(function($) {
     }
   };
 
+  adjustSlider.init($('.slider .container'), $('.slider-logo'), $('.slider-desc'));
   smoothScroll.init(300);
   mobileNavigation.init($('.mobile-nav'));
   submitForm.init($('.js-form-submit'));
