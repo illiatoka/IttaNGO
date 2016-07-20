@@ -1,5 +1,7 @@
 .team
   padding: em(50) 0 em(100)
+  @include mediaQueryMax(em(640))
+    padding-bottom: em(30)
 
   &-title
     color: $textBlack
@@ -7,6 +9,8 @@
     font-weight: 400
     line-height: 1
     text-transform: uppercase
+    @include mediaQueryMax(em(640))
+      text-align: center
 
   &-items
     display: flex
@@ -17,6 +21,10 @@
       margin-top: em(15)
     @include mediaQuery(tablet)
       justify-content: space-between
+    @include mediaQueryMax(em(640))
+      margin: em(40) 0 em(5)
+      flex-flow: column
+      align-items: center
   &-item
     text-align: center
     color: $textBlack
@@ -26,6 +34,9 @@
       background-color: $grayLight
       padding: em(60) 0
       margin-top: em(40)
+    @include mediaQueryMax(em(640))
+      margin-top: 0
+      margin-bottom: em(20)
     &--img
       position: relative
       margin: 0 auto em(30)
