@@ -11,4 +11,4 @@ google_form_url: https://script.google.com/macros/s/AKfycbz4bTsnmIPBOIawGxEC6Cb6
 # Build settings
 markdown: kramdown
 permalink: pretty
-exclude: ["node_modules", "gulpfile.js", "package.json", readme.md, npm-debug.log]
+exclude: ["node_modules", "assets/sass", "gulpfile.js", "package.json", readme.md, npm-debug.log]
