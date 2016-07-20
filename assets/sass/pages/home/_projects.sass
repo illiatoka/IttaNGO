@@ -4,6 +4,8 @@
   text-align: center
   @include mediaQuery(large)
     padding-bottom: em(80)
+  @include mediaQueryMax(em(640))
+    padding-bottom: em(50)
 
   &-title
     color: $textBlack
@@ -13,6 +15,8 @@
     margin-left: rem(-3)
     text-transform: uppercase
     text-align: left
+    @include mediaQueryMax(em(640))
+      text-align: center
 
   &-items
     display: flex
@@ -25,6 +29,10 @@
       justify-content: space-around
     @include mediaQuery(tablet)
       justify-content: space-between
+    @include mediaQueryMax(em(640))
+      margin: em(40) 0 em(25)
+      flex-flow: column
+      align-items: center
 
   &-item
     width: em(260)
@@ -42,6 +50,8 @@
     @include mediaQuery(desktop)
       width: em(290)
       margin-bottom: em(40)
+    @include mediaQueryMax(em(640))
+      margin-bottom: em(20)
     &--img
       position: relative
       display: block
@@ -102,3 +112,5 @@
       background-color: $gray
       text-decoration: none
       color: #f1f1f1
+    @include mediaQueryMax(em(640))
+      padding: em(5) em(20)
