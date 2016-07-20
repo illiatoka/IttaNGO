@@ -36,6 +36,16 @@
       display: inline-block
       &:not(:last-child)
         margin: 0 em(60) 0 0
+      a
+        border-bottom: em(2) solid transparent
+        display: inline-block
+        line-height: 1
+        padding-bottom: em(1)
+        &.active
+          border-bottom-color: #bebebe
+        &:hover
+          text-decoration: none
+          border-bottom-color: $textBlack
 
   &-lang
     @include mediaQuery(phone)

@@ -5,10 +5,12 @@
     </a>
 
     <ul class="header-nav">
-      <li><a href="{{ site.baseurl }}/#projects">Projects</a></li>
+      {% assign projects_url = site.baseurl | append: "/projects/" %}
+      {% assign news_url = site.baseurl | append: "/news/" %}
+      <li><a href="{{ site.baseurl }}/#projects" {% if page.url == projects_url %}class="active"{% endif %}>Projects</a></li>
       <li><a href="{{ site.baseurl }}/#about">About Us</a></li>
       <li><a href="{{ site.baseurl }}/#contacts">Contacts</a></li>
-      <li><a href="{{ site.baseurl }}/news">News</a></li>
+      <li><a href="{{ site.baseurl }}/news" {% if page.url == news_url %}class="active"{% endif %}>News</a></li>
     </ul>
     
     <ul class="header-lang">

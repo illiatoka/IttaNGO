@@ -14,16 +14,17 @@
     padding-left: 40px
 
   .post
-    color: #3a3a3a
+    color: $textBlack
     &:not(:last-child)
       margin-bottom: 40px
       border-bottom: 1px solid $grayLight
       padding-bottom: 50px
     img
       max-width: 100%
+      margin-bottom: 9px
     .title
       font-size: 25px
-      color: #111
+      color: $textBlack
       font-weight: 600
       line-height: 1.6
       margin-bottom: 9px
@@ -53,16 +54,16 @@
         margin-bottom: 8px
   .post-button
     display: inline-block
-    background-color: #0096eb
+    background-color: $blueLight
     font-size: 14px
     padding: 6px 10px
-    color: #fff
-    border-radius: 2px
+    color: $white
+    font-weight: 600
 
   .blog-sidebar
     .sidebar-item
-      color: #3a3a3a
-      box-shadow: 0 0 7px rgba(0,0,0,.07)
+      color: $textBlack
+      box-shadow: 0 0 15px rgba(0,0,0,.1)
       padding: 19px 34px
       border: 1px solid #eaeaea
       &:not(:last-child)
@@ -71,7 +72,7 @@
       font-size: 16px
       font-weight: 600
       line-height: 1
-      margin: 0
+      margin-bottom: em(20)
     .list
       list-style: none
       padding-left: 0
@@ -79,11 +80,77 @@
         margin-bottom: 8px
       a
         display: inline-block
+        border-bottom: em(2) solid transparent
         line-height: 1
-        margin-top: em(7)
-        padding: em(5) 0 em(1)
+        padding-bottom: em(1)
         &.active
-          border-bottom: em(2) solid #bebebe
+          border-bottom-color: #bebebe
         &:hover
           text-decoration: none
           border-bottom-color: $textBlack
+    .subscribe
+      form
+        padding-bottom: 42px
+      .field
+        label.error
+          color: $textRed
+        label.success
+          color: $textGreen
+        position: relative
+        div
+          position: absolute
+          top: -20px
+          left: 0
+          display: none
+        & + .field
+          margin-top: em(25)
+          & + .field
+            padding-top: em(5)
+      input
+        background-color: transparent
+        border: none
+        border-bottom: 2px solid $gray
+        display: block
+        color: $textBlack
+        width: 100%
+        font-size: em(20)
+        padding: 0
+        &.error
+          border-bottom: 2px solid $textRed
+        &:focus
+          outline: none
+        &::-webkit-input-placeholder
+          color: $textBlack
+          font-style: italic
+          font-size: rem(20)
+          font-weight: 300
+        &:-moz-placeholder
+          color: $textBlack
+          font-style: italic
+          font-size: rem(20)
+          font-weight: 300
+        &::-moz-placeholder
+          color: $textBlack
+          font-style: italic
+          font-size: rem(20)
+          font-weight: 300
+        &:-ms-input-placeholder  
+          color: $textBlack
+          font-style: italic
+          font-size: rem(20)
+          font-weight: 300
+      button
+        background-color: transparent
+        border: 2px solid $gray
+        border-top: none
+        float: right
+        color: $textBlack
+        display: inline-block
+        font-size: em(20)
+        padding: rem(2) rem(8)
+        min-width: rem(130)
+        text-align: center
+        &:hover
+          background-color: $gray
+          text-decoration: none
+          color: $white

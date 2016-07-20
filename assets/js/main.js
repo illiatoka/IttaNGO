@@ -196,8 +196,11 @@ jQuery(function($) {
     }
   };
 
+  $(window).load(function() {
+    smoothScroll.init(300);
+  });
+
   adjustSlider.init($('.slider .container'), $('.slider-logo'), $('.slider-desc'));
-  smoothScroll.init(300);
   mobileNavigation.init($('.mobile-nav'));
   submitForm.init($('.js-form-submit'));
 });
