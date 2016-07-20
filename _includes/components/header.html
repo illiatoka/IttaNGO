@@ -1,8 +1,7 @@
 <header class="header">
   <div class="container">
-
     <a href="{{ site.baseurl }}/#slider" class="header-logo">
-      <img src="/assets/svg/logo-rectangle.svg" alt="ITTA Youth NGO logo"/>
+      <img src="/assets/svg/logo-rectangle.svg" width="36.8" height="55" alt="ITTA Youth NGO logo"/>
     </a>
 
     <ul class="header-nav">
@@ -13,9 +12,25 @@
     </ul>
     
     <ul class="header-lang">
-      <li><a href="#">UA</a></li>
+      {% comment %}<li><a href="#">UA</a></li>{% endcomment %}
       <li><a href="#" class="active">EN</a></li>
     </ul>
 
+    <div class="header-burger">
+      <span class="line top"></span>
+      <span class="line middle"></span>
+      <span class="line bottom"></span>
+    </div>
   </div>
 </header>
+
+<div class="mobile-nav">
+  <a href="{{ site.baseurl }}/#slider" class="mobile-nav-logo"><img src="/assets/svg/logo-rectangle.svg" width="36.8" height="55" alt="ITTA Youth NGO logo"/></a>
+  <ul class="mobile-nav-list">
+    <li><a href="{{ site.baseurl }}/#slider">Home</a></li>
+    <li><a href="{{ site.baseurl }}/#projects">Projects</a></li>
+    <li><a href="{{ site.baseurl }}/#about">About Us</a></li>
+    <li><a href="{{ site.baseurl }}/#contacts">Contacts</a></li>
+    <li><a href="{{ site.baseurl }}/news">News</a></li>
+  </ul>
+</div>

@@ -3,7 +3,7 @@ jQuery(function($) {
     init: function(duration) {
       smoothScroll.config = {
         navigation: $('.header'),
-        element: $('.header a'),
+        element: $('.header a, .mobile-nav a'),
         document: $('html, body'),
         documentHash: document.location.hash
       };
@@ -13,8 +13,8 @@ jQuery(function($) {
 
     scroll: function(duration, hash) {
       function scrollTo(target) {
-        var targetID = target.split("#").pop(),
-            element = $("#smooth_" + targetID);
+        var targetID = target.split('#').pop(),
+            element = $('#smooth_' + targetID);
         if( element.length ) {
           event.preventDefault();
           smoothScroll.config.document.animate({
@@ -28,6 +28,39 @@ jQuery(function($) {
       }
       smoothScroll.config.element.on('click', function(event) {
         scrollTo($(this).attr('href'));
+      });
+    }
+  };
+
+  var mobileNavigation = {
+    init: function(navigation) {
+      mobileNavigation.config = {
+        root: $('body'),
+        navigation: navigation,
+        burger: $('.header-burger'),
+        links: navigation.find('a'),
+        cssClass: 'mobile-nav-is-visible'
+      };
+
+      mobileNavigation.show(
+        mobileNavigation.config.root,
+        mobileNavigation.config.navigation,
+        mobileNavigation.config.burger,
+        mobileNavigation.config.links,
+        mobileNavigation.config.cssClass
+      );
+    },
+
+    show: function(root, navigation, burger, links, cssClass) {
+      $(document).on('click', function(event) {
+        if ($(event.target).closest(burger).length) {
+          root.toggleClass(cssClass);
+        } else if ($(event.target).closest(links).length ||
+          !$(event.target).closest(burger).length &&
+          !$(event.target).closest(navigation).length)
+        {
+          root.removeClass(cssClass);
+        }
       });
     }
   };
@@ -133,5 +166,6 @@ jQuery(function($) {
   };
 
   smoothScroll.init(300);
-  submitForm.init($(".js-form-submit"));
+  mobileNavigation.init($('.mobile-nav'));
+  submitForm.init($('.js-form-submit'));
 });

@@ -3,7 +3,10 @@
     align-items: center
     display: flex
     justify-content: space-between
-    min-height: 100vh
+    min-height: calc(100vh - 65px)
+    @include mediaQueryMax(em(690))
+      flex-flow: column
+      justify-content: space-around
 
   &-logo
     padding: em(50) 0
@@ -14,6 +17,9 @@
       width: 35%
     @include mediaQuery(desktop)
       width: 40%
+    @include mediaQueryMax(em(690))
+      width: 40vh 
+      padding: 5vh 0 0
 
   &-desc
     color: $textBlue
@@ -25,6 +31,10 @@
       font-size: em(13)
     @include mediaQuery(tablet)
       font-size: em(12)
+    @include mediaQueryMax(em(690))
+      padding: 0 0 5vh
+      width: 100%
+      max-width: 315px
 
   &-title
     font-size: em(110)
@@ -32,6 +42,8 @@
     padding: rem(25) 0
     @include mediaQuery(huge)
       font-size: em(100)
+    @include mediaQueryMax(em(690))
+      padding: 0
 
   &-text
     font-size: em(24)
@@ -47,3 +59,5 @@
     @include mediaQuery(desktop)
       padding: rem(15) 0
       max-width: rem(400)
+    @include mediaQueryMax(em(690))
+      padding-bottom: 0
