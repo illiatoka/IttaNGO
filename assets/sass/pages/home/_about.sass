@@ -2,6 +2,10 @@
   padding: em(50) 0 em(100)
   &.gray
     background-color: $grayLight
+    @include mediaQueryMax(em(640))
+      padding-top: em(20)
+  @include mediaQueryMax(em(640))
+    padding-bottom: em(50)
 
   &-title
     color: $textBlack
@@ -9,12 +13,16 @@
     font-weight: 400
     line-height: 1
     text-transform: uppercase
+    @include mediaQueryMax(em(640))
+      text-align: center
 
   &-image
     margin-top: em(95)
     text-align: center
     @include mediaQuery(desktop)
-      display: none
+      margin-top: em(60)
+    @include mediaQueryMax(em(640))
+      margin-top: em(40)
     img
       max-width: 100%
 
@@ -24,10 +32,16 @@
     &--left,
     &--right
       width: 50%
+      @include mediaQueryMax(em(640))
+        width: 100%
     &--left
       padding-right: em(25)
+      @include mediaQueryMax(em(640))
+        padding-right: 0
     &--right
       padding-left: em(25)
+      @include mediaQueryMax(em(640))
+        padding-left: 0
 
   &-item
     color: $textBlack
@@ -35,6 +49,8 @@
       font-size: em(25)
       line-height: 1
       margin: rem(50) 0 rem(40)
+      @include mediaQueryMax(em(640))
+        margin: rem(30) 0 rem(20)
     &--text
       span
         font-weight: 600
