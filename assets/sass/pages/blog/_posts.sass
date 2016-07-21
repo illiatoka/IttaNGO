@@ -4,14 +4,22 @@
 
   .container
     display: flex
+    @include mediaQuery(tablet)
+      flex-flow: column
 
   .blog-posts
     width: calc(100% - 338px)
     padding-right: 40px
     border-right: 1px solid $grayLight
+    @include mediaQuery(tablet)
+      width: 100%
+      border-right: none
+      padding-right: 0
   .blog-sidebar
     width: 338px
     padding-left: 40px
+    @include mediaQuery(tablet)
+      display: none
 
   .post
     color: $textBlack
@@ -28,6 +36,7 @@
       font-weight: 600
       line-height: 1.6
       margin-bottom: 9px
+      text-align: left
     .caption
       margin-top: 0
       font-size: 15px
