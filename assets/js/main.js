@@ -180,13 +180,13 @@ jQuery(function($) {
       }
     },
 
-    successMessage(form) {
+    successMessage: function(form) {
       var $target = form.find("input").first();
       $target.addClass("success");
       $target.parent().prepend('<div><label class="success">Form was successfully submitted!</label></div>').find("div").fadeIn("fast");
     },
 
-    removeInfoMessage(input) {
+    removeInfoMessage: function(input) {
       if (input.hasClass("error") || input.hasClass("success")) {
         input.removeClass("error success");
         input.parent().find('div').fadeOut("fast", function() {
