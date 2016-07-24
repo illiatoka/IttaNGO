@@ -1,7 +1,7 @@
 jQuery(function($) {
   var adjustSlider = {
     init: function(slider, logo, desc) {
-      adjustSlider.config = {
+      this.config = {
         minViewportWidth: 690,
         viewportWidth: window.innerWidth,
         sliderHeight: slider.outerHeight(),
@@ -10,10 +10,10 @@ jQuery(function($) {
         descMarginBottom: desc.outerHeight(true) - desc.innerHeight()
       };
 
-      if (adjustSlider.config.viewportWidth < adjustSlider.config.minViewportWidth) {
-        adjustSlider.setSliderHeight(slider, adjustSlider.config.sliderHeight);
-        adjustSlider.setLogoWidth(logo, adjustSlider.config.logoWidth, adjustSlider.config.logoMarginTop);
-        adjustSlider.setDescMargin(desc, adjustSlider.config.descMarginBottom);
+      if (this.config.viewportWidth < this.config.minViewportWidth) {
+        this.setSliderHeight(slider, this.config.sliderHeight);
+        this.setLogoWidth(logo, this.config.logoWidth, this.config.logoMarginTop);
+        this.setDescMargin(desc, this.config.descMarginBottom);
       }
     },
 
@@ -32,14 +32,14 @@ jQuery(function($) {
 
   var smoothScroll = {
     init: function(duration) {
-      smoothScroll.config = {
+      this.config = {
         navigation: $('.header'),
         element: $('.header a, .mobile-nav a'),
         document: $('html, body'),
         documentHash: document.location.hash
       };
 
-      smoothScroll.scroll(duration, smoothScroll.config.documentHash);
+      this.scroll(duration, this.config.documentHash);
     },
 
     scroll: function(duration, hash) {
@@ -57,7 +57,7 @@ jQuery(function($) {
         history.replaceState('', document.title, window.location.pathname);
         scrollTo(hash);
       }
-      smoothScroll.config.element.on('click', function(event) {
+      this.config.element.on('click', function(event) {
         scrollTo($(this).attr('href'));
       });
     }
@@ -65,7 +65,7 @@ jQuery(function($) {
 
   var mobileNavigation = {
     init: function(navigation) {
-      mobileNavigation.config = {
+      this.config = {
         root: $('body'),
         navigation: navigation,
         burger: $('.header-burger'),
@@ -73,12 +73,12 @@ jQuery(function($) {
         cssClass: 'mobile-nav-is-visible'
       };
 
-      mobileNavigation.show(
-        mobileNavigation.config.root,
-        mobileNavigation.config.navigation,
-        mobileNavigation.config.burger,
-        mobileNavigation.config.links,
-        mobileNavigation.config.cssClass
+      this.show(
+        this.config.root,
+        this.config.navigation,
+        this.config.burger,
+        this.config.links,
+        this.config.cssClass
       );
     },
 
@@ -99,7 +99,7 @@ jQuery(function($) {
   var submitForm = {
     init: function(forms) {
       forms.find("button").prop("disabled", false);
-      submitForm.handleEvents(forms);
+      this.handleEvents(forms);
     },
 
     handleEvents: function(forms) {
@@ -144,7 +144,7 @@ jQuery(function($) {
     sendData: function(form) {
       var request = false;
 
-      if (submitForm.validate(form)) {
+      if (this.validate(form)) {
         if (request) {
           request.abort();
         }
