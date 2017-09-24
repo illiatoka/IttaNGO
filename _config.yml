@@ -3,7 +3,7 @@ title: ITTA | Youth NGO
 email: ittayouth@gmail.com
 description: We are non-governmental non-profit organization based in Ukraine established by and for young people.
 baseurl: ""
-url: http://ittayouth.com
+url: https://ittayouth.com
 facebook_url: https://www.facebook.com/NGO.ITTA
 vk_url: https://vk.com/ngoitta
 google_form_url: https://script.google.com/macros/s/AKfycbz4bTsnmIPBOIawGxEC6Cb6jTUL2nZvVwk1q0lW3sSr6Oh1uasL/exec
@@ -11,4 +11,4 @@ google_form_url: https://script.google.com/macros/s/AKfycbz4bTsnmIPBOIawGxEC6Cb6
 # Build settings
 markdown: kramdown
 permalink: pretty
-exclude: ["node_modules", "assets/sass", "gulpfile.js", "package.json", readme.md, npm-debug.log]
+exclude: ["node_modules", "assets/sass", "gulpfile.js", "package.json", "package-lock.json", readme.md, npm-debug.log]
