@@ -5,7 +5,8 @@ var gulp        = require('gulp'),
     jade        = require('gulp-jade'),
     sass        = require('gulp-sass'),
     prefix      = require('gulp-autoprefixer'),
-    cp          = require('child_process');
+    cp          = require('child_process'),
+    cssNano     = require("gulp-cssnano");
 
 var jekyll      = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll',
     messages    = { jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build' };
@@ -45,6 +46,7 @@ gulp.task('sass', function () {
     }))
     .pipe(sass({outputStyle: 'compact'}))
     .pipe(prefix(['last 2 versions'], { cascade: true }))
+    .pipe(cssNano())
     .pipe(gulp.dest('_site/assets/css'))
     .pipe(browserSync.reload({stream:true}))
     .pipe(gulp.dest('assets/css'));
