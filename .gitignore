@@ -22,3 +22,6 @@ _site/
 
 ### Assets ###
 assets/css/
+
+### OS Artifacts ###
+.DS_Store
